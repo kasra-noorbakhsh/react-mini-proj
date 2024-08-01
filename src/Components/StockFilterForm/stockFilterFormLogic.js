@@ -1,4 +1,6 @@
 
+import { object } from "yup";
+
 // yup.addMethod(yup.number, "compareMinMax", function(errorMassege) {
 //     return this.test("compareMinMax", errorMassege, function(val) {
 //         const { path, createError } = this;
@@ -7,7 +9,6 @@
 //     });
 // });
 
-import { object } from "yup";
 
 // export const schema = yup.object().shape({
 //     symbol: yup.string().transform((value, originalValue) => {
@@ -27,7 +28,7 @@ import { object } from "yup";
 //     industry: yup.string()
 // })
 
-export const FieldNames = Object.freeze({
+export const FieldNamesEnum = Object.freeze({
     symbol: "symbol",
     companyName: "companyName",
     maxPrice: "maxPrice",
@@ -36,7 +37,7 @@ export const FieldNames = Object.freeze({
 })
 
 export const formInitialState = {
-    [FieldNames.symbol]: {
+    [FieldNamesEnum.symbol]: {
         value: "",
         focusOnce: false,
         error: {
@@ -44,10 +45,11 @@ export const formInitialState = {
             message: "",
         }
     },
-    [FieldNames.companyName]: {
+    [FieldNamesEnum.companyName]: {
         value: "",
+        focusOnce: false,
     },
-    [FieldNames.maxPrice]: {
+    [FieldNamesEnum.maxPrice]: {
         value: "",
         focusOnce: false,
         error: {
@@ -55,7 +57,7 @@ export const formInitialState = {
             message: ""
         }
     },
-    [FieldNames.minPrice]: {
+    [FieldNamesEnum.minPrice]: {
         value: "",
         focusOnce: false,
         error: {
@@ -63,13 +65,14 @@ export const formInitialState = {
             message: ""
         }
     },
-    [FieldNames.industry]: {
+    [FieldNamesEnum.industry]: {
         value: "",
+        focusOnce: false,
     }
 } 
 
 export const formReducer = (state, {newState}) => {
-    console.log(newState);
+    validateAllFields(newState);
     return newState;
 }
 
@@ -81,5 +84,53 @@ export const updateStateOnChange = (currentState, fieldName, newValue, dispatche
 }
 
 export const updateStateOnBlur = (currentState, fieldName, dispatcher) => {
-    console.log(fieldName);
+    const targetField = currentState[fieldName];
+    const changedField = {...targetField, focusOnce: true};
+    let tempState = {...currentState, [fieldName]: changedField};
+    dispatcher({newState: tempState});
 }
+
+const validateAllFields  = (state) => {
+    validateSymbol(state.symbol);
+    validateMinPrice(state.minPrice, state.maxPrice);
+}
+
+const validateMinPrice = (minPrice, maxPrice) => {
+    if (minPrice.value === "" || minPrice.focusOnce === false ||
+        maxPrice.value === "" || maxPrice.focusOnce === false) {
+            clearErrorObject(minPrice.error);
+            return;
+    }
+
+    if (Number(minPrice.value) > Number(maxPrice.value)) {
+        minPrice.error.hasAny = true;
+        minPrice.error.message = "حداقل قیمت از حداکثر قیمت بیشتر است";
+    }
+    else {
+        clearErrorObject(minPrice.error);
+    }
+}
+
+const validateSymbol = (symbol) => {
+    if (symbol.value === "" || symbol.focusOnce === false) {
+        clearErrorObject(symbol.error);
+        return;
+    }
+
+    if (symbol.value.length > 6) {
+        symbol.error.hasAny = true;
+        symbol.error.message = "حداکثر طول نماد رعایت نشده است";
+    }
+    else if (symbol.value.length < 3) {
+        symbol.error.hasAny = true;
+        symbol.error.message = "حداقل طول نماد رعایت نشده است";
+    }
+    else {
+        clearErrorObject(symbol.error);
+    }
+}
+
+const clearErrorObject = (error) => {
+    error.hasAny = false;
+    error.message = "";
+} 
