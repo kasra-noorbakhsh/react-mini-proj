@@ -1,0 +1,28 @@
+.user-card{
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3;
+    border-radius: 5px;
+    margin: 15px;
+    width: 20%;
+    align-items: center;
+    background-color: wheat;
+    padding: 10px 0px;
+    border-radius: 7px;
+    color: mediumblue;
+}
+
+.user-card:hover{
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.user-card img{
+    width: 175px;
+    height: 200px;
+    border-radius: 5px;
+    mix-blend-mode: multiply;
+}
