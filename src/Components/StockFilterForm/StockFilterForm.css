@@ -1,0 +1,22 @@
+.stock-filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.stock-filter-form-input{
+    border-style: none;
+    border-bottom-style: solid;
+}
+
+.stock-filter-form-input:focus{
+    outline: none;
+    border-color: aqua;
+}
+
+.stock-filter-form-error-message {
+    color: red;
+    font-size: small;
+    height: 10px;
+}
