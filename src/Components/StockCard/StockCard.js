@@ -1,8 +1,8 @@
 import './StockCard.css'
 
-const StockCard = ({ symbol, companyName, industry, id }) => {
+const StockCard = ({ symbol, companyName, industry, id, onClickProcess }) => {
     return(
-        <div className="stock-card">
+        <div className="stock-card" onClick={() => onClickProcess(id)}>
             <img src="./aks.jpg" alt='Avatar'/>
             <div>
                 <p>نماد: {symbol}</p>
