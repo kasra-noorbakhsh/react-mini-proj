@@ -1,13 +1,13 @@
 import { useState } from "react"
 import StockCardList from "../../Components/StockCardList/StockCardList"
 import StockFilterForm from "../../Components/StockFilterForm/StockFilterForm"
-import { setStocksAsync } from "./stockPageLogic"
+import { setStocksAsync } from "./stockListPageLogic"
 
-import './stockPageLogic'
+import './stockListPageLogic'
 
-import './StockPage.css'
+import './StockListPage.css'
 
-const StockPage = () => {
+const StockListPage = () => {
 
     const [stocks, setStocks] = useState([])
 
@@ -24,4 +24,4 @@ const StockPage = () => {
 
 }
 
-export default StockPage
+export default StockListPage
