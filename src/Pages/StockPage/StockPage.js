@@ -1,3 +1,4 @@
+import React from 'react';
 import  {useEffect, useState} from 'react'
 import {useParams, Link} from "react-router-dom"
 import {setStockAsync} from "./stockPageLogic";
@@ -15,14 +16,25 @@ const StockPage = () => {
     }, []);
 
     return (
-        <div>
-            <p>{stock.id}</p>
-            <p>{stock.companyName}</p>
-            <p>{stock.symbol}</p>
-            <p>{stock.industry}</p>
-            <p>{stock.purchase}</p>
-            <p>{stock.lastDiv}</p>
+<React.Fragment>
+        <div className="info-box">
+            <img src="../aks.jpg" alt="Stock Image" className="info-box-image"/>
+            <div className="info-box-content">
+                <h2 className="info-box-title">مشخصات سهام</h2>
+                <ul className="info-list">
+                    <li><strong>شماره سهام:</strong> {stock.id}</li>
+                    <li><strong>نام شرکت:</strong> {stock.companyName}</li>
+                    <li><strong>نماد:</strong> {stock.symbol}</li>
+                    <li><strong>حوزه کاری:</strong> {stock.industry}</li>
+                    <li><strong>خرید:</strong> {stock.purchase}</li>
+                    <li><strong>آخرین سود سهام:</strong> {stock.lastDiv}</li>
+                </ul>
+            </div>
         </div>
+        <div>
+            <Link to="/stock-list" className="stock-list-page-link">بازگشت به صفحه نمایش کاربران</Link>
+        </div>
+</React.Fragment>
     )
 }
 

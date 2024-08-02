@@ -1,0 +1,69 @@
+/* styles.css */
+.info-box {
+    display: flex; /* Use flexbox to arrange items side by side */
+    align-items: flex-start; /* Align items to the top */
+    background-color: #f4f4f4; /* Light background color for contrast */
+    border: 1px solid #ddd; /* Light border for definition */
+    border-radius: 8px; /* Rounded corners */
+    padding: 16px; /* Spacing inside the box */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    width: 100%; /* Make the box take the full width of the page */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-family: Arial, sans-serif; /* Set a clean, readable font */
+    direction: ltr; /* Ensure left-to-right text direction */
+    text-align: right; /* Align text to the left */
+    max-width: none; /* Remove max-width restriction */
+}
+
+.info-box-image {
+    width: 100px; /* Set a smaller fixed width for the image */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure image covers the container without distortion */
+    border-radius: 8px; /* Optional: rounded corners for the image */
+    margin-right: 16px; /* Space between the image and content */
+}
+
+.info-box-content {
+    flex: 1; /* Allow content to take up remaining space */
+}
+
+.info-box-title {
+    margin-right: 8px;
+    font-weight: bold;
+    font-size: 18px; /* Larger font size for the title */
+    font-weight: bold; /* Bold text for emphasis */
+    margin-bottom: 12px; /* Space below the title */
+    color: #000; /* Dark color for the title */
+}
+
+.info-list {
+    display: flex; /* Display list items in a horizontal row */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.info-list li {
+    margin: 8px 16px 8px 100px; /* Space between list items */
+    font-size: 17px; /* Font size for readability */
+    color: #333; /* Text color for readability */
+}
+
+.info-list li strong {
+    color: #000; /* Darker color for labels */
+}
+
+.stock-list-page-link{
+    text-decoration: none;
+    border: none;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    border-radius: 25px;
+    padding: 15px 30px;
+    font-size: 0.9em;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 20%;
+}
