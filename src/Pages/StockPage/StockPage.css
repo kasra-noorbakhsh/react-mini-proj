@@ -52,3 +52,23 @@
 .info-list li strong {
     color: #000;
 }
+
+.stock-page-add-comment-btn {
+  background-color: #2ea44f;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  margin: 10px;
+}
+
+.stock-page-add-comment-btn:hover {
+  background-color: #2c974b;
+}
+
+.stock-page-add-comment-btn:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}

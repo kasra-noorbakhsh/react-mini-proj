@@ -1,0 +1,73 @@
+.stock-add-form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    width: 50%;
+}
+
+.stock-add-form div {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.stock-add-form label {
+    width: auto;
+    margin-right: 10px; 
+}
+
+.stock-add-form-input {
+    flex: 1;
+    border-style: none;
+    border-bottom-style: solid;
+    padding: 5px; 
+}
+
+.stock-add-form-submit {
+    align-items: center;
+    appearance: none;
+    background-color: #3EB2FD;
+    background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%);
+    background-size: calc(100% + 20px) calc(100% + 20px);
+    border-radius: 100px;
+    border-width: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 1rem;
+    height: auto;
+    justify-content: center;
+    line-height: 1.5;
+    padding: 6px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .2s,background-position .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 150px;
+    align-self: center;
+  }
+  
+.stock-add-form-submit:active,
+.stock-add-form-submit:focus {
+    outline: none;
+}
+  
+.stock-add-form-submit:hover {
+    background-position: -20px -20px;
+}
+  
+.stock-add-form-submit:focus:not(:active) {
+    box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
+}
+
+.add-form-error-message{
+    color: red;
+    text-align: center;
+}
