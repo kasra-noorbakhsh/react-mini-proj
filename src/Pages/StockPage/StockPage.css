@@ -52,17 +52,3 @@
 .info-list li strong {
     color: #000;
 }
-
-.stock-list-page-link {
-    text-decoration: none;
-    border: none;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    color: white;
-    border-radius: 25px;
-    padding: 15px 30px;
-    font-size: 0.9em;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-    height: 20%;
-}

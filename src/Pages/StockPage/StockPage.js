@@ -31,9 +31,6 @@ const StockPage = () => {
                 </ul>
             </div>
         </div>
-        <div>
-            <Link to="/stock-list" className="stock-list-page-link">بازگشت به صفحه نمایش کاربران</Link>
-        </div>
 </React.Fragment>
     )
 }

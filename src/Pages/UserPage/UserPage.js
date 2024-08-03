@@ -34,8 +34,6 @@ const UserPage = () => {
                     <p>ارزش حقیقی: {portfolioItem.marketCap}</p>
                 </div>
             ))}</div>
-
-            <Link to="/user-list" className="users-page-link">بازگشت به صفحه نمایش کاربران</Link>
         </div>
     )
 }
