@@ -17,7 +17,6 @@
 
 .stock-card:hover{
     box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
-    cursor: pointer;
 }
 
 .stock-card img{
@@ -25,4 +24,31 @@
     height: 200px;
     border-radius: 5px;
     mix-blend-mode: multiply;
+}
+
+.stock-card-btn {
+    border: none; 
+    padding: 10px 10px;
+    font-size: large;
+    margin: 4px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.delete-stock-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.delete-stock-btn:hover {
+    background-color: #d32f2f;
+}
+
+.view-stock-page-btn {
+    background-color: #365ff4;
+    color: white;
+}
+
+.view-stock-page-btn:hover {
+    background-color: #291e86;
 }
