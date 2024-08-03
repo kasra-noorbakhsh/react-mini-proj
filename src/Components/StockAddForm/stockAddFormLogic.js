@@ -19,27 +19,34 @@ export const schema = yup.object().shape({
 
 export const addStockAsync = async (data) => {
 
-    const response = await fetch(postStock, {
-            method: 'POST', 
-            headers:{
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                symbol: data.symbol,
-                companyName: data.companyName,
-                purchase: data.price,
-                lastDiv: data.lastPrice,
-                industry: data.industry,
-                marketCap: data.value,
-              }),
-        })
+    try{
+        const response = await fetch(postStock, {
+                method: 'POST', 
+                headers:{
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    symbol: data.symbol,
+                    companyName: data.companyName,
+                    purchase: data.price,
+                    lastDiv: data.lastPrice,
+                    industry: data.industry,
+                    marketCap: data.value,
+                }),
+            })
 
-    if (!response.ok) {
-        throw new Error('Network response was not ok');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        toast.success('سهام شما با موفقیت اضافه شد', {
+            position: 'top-left',
+            autoClose: 5000, 
+        });
     }
 
-    if(response.ok) {
-        toast.success('سهام شما با موفقیت اضافه شد', {
+    catch (error){
+        toast.error('خطا در اضافه کردن سهام. لطفاً دوباره تلاش کنید', {
             position: 'top-left',
             autoClose: 5000, 
         });
