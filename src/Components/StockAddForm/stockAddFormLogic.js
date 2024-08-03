@@ -8,13 +8,13 @@ export const schema = yup.object().shape({
 
     companyName: yup.string().required("فیلد نام شرکت اجباری است"),
 
-    price: yup.number().required("فیلد قیمت خرید اجباری است").positive("قیمت باید مثبت باشد"),
+    price: yup.number().typeError('قیمت باید عدد باشد').required("فیلد قیمت خرید اجباری است").positive("قیمت باید مثبت باشد"),
 
-    lastPrice: yup.number().required("فیلد قیمت خرید اجباری است").positive("قیمت باید مثبت باشد"),
+    lastPrice: yup.number().typeError('قیمت باید عدد باشد').required("فیلد قیمت خرید اجباری است").positive("قیمت باید مثبت باشد"),
 
     industry: yup.string().required("فیلد حوزه صنعتی اجباری است"),
 
-    value: yup.number().required("فیلد ارزش بنیادی اجباری است").positive("ارزش بنیادی باید مثبت باشد")
+    value: yup.number().typeError('قیمت باید عدد باشد').required("فیلد ارزش بنیادی اجباری است").positive("ارزش بنیادی باید مثبت باشد")
 })
 
 export const addStockAsync = async (data) => {
