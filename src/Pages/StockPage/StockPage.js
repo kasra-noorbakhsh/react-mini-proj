@@ -1,8 +1,8 @@
 import React from 'react';
 import  {useEffect, useState} from 'react'
-import {useParams} from "react-router-dom"
+import {useParams, Link} from "react-router-dom"
 import {setStockAsync} from "./stockPageLogic";
-
+import CommentCardList from "../../Components/ComentCardList/CommentCardList";
 import "./StockPage.css"
 
 const StockPage = () => {
@@ -16,23 +16,25 @@ const StockPage = () => {
     }, []);
 
     return (
-        <div>
-            <div className="info-box">
-                <img src="../aks.jpg" alt="Stock Image" className="info-box-image"/>
-                <div className="info-box-content">
-                    <h2 className="info-box-title">مشخصات سهام</h2>
-                    <ul className="info-list">
-                        <li><strong>شماره سهام:</strong> {stock.id}</li>
-                        <li><strong>نام شرکت:</strong> {stock.companyName}</li>
-                        <li><strong>نماد:</strong> {stock.symbol}</li>
-                        <li><strong>حوزه کاری:</strong> {stock.industry}</li>
-                        <li><strong>خرید:</strong> {stock.purchase}</li>
-                        <li><strong>آخرین سود سهام:</strong> {stock.lastDiv}</li>
-                    </ul>
-                </div>
+<React.Fragment>
+        <div className="info-box">
+            <img src="../aks.jpg" alt="Stock Image" className="info-box-image"/>
+            <div className="info-box-content">
+                <h2 className="info-box-title">مشخصات سهام</h2>
+                <ul className="info-list">
+                    <li><strong>شماره سهام:</strong> {stock.id}</li>
+                    <li><strong>نام شرکت:</strong> {stock.companyName}</li>
+                    <li><strong>نماد:</strong> {stock.symbol}</li>
+                    <li><strong>حوزه کاری:</strong> {stock.industry}</li>
+                    <li><strong>خرید:</strong> {stock.purchase}</li>
+                    <li><strong>آخرین سود سهام:</strong> {stock.lastDiv}</li>
+                </ul>
             </div>
-            <button className="stock-page-add-comment-btn">اضافه کردن دیدگاه</button>
+            <div className="Comments">
+
+            </div>
         </div>
+</React.Fragment>
     )
 }
 
