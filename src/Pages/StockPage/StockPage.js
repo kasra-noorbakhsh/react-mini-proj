@@ -2,7 +2,7 @@ import React from 'react';
 import  {useEffect, useState} from 'react'
 import {useParams, Link} from "react-router-dom"
 import {setStockAsync} from "./stockPageLogic";
-
+import CommentCardList from "../../Components/ComentCardList/CommentCardList";
 import "./StockPage.css"
 
 const StockPage = () => {
@@ -29,6 +29,9 @@ const StockPage = () => {
                     <li><strong>خرید:</strong> {stock.purchase}</li>
                     <li><strong>آخرین سود سهام:</strong> {stock.lastDiv}</li>
                 </ul>
+            </div>
+            <div className="Comments">
+
             </div>
         </div>
 </React.Fragment>
