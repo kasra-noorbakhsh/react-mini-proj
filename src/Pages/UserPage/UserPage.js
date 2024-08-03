@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import { setUserAsync } from "./userPageLogic";
-import { Link } from "react-router-dom"
 
 import './userPageLogic'
 

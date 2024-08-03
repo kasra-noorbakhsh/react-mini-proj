@@ -3,7 +3,7 @@ import './StockCard.css'
 const StockCard = ({ symbol, companyName, industry, id, onClickProcess: viewStockPage }) => {
     return(
         <div className="stock-card">
-            <img src="./aks.jpg" alt='Avatar'/>
+            <img src="../aks.jpg" alt='Avatar'/>
             <div>
                 <p>نماد: {symbol}</p>
                 <p>نام شرکت: {companyName}</p>
