@@ -1,4 +1,3 @@
-
 export const FieldNamesEnum = Object.freeze({
     symbol: "symbol",
     companyName: "companyName",
@@ -7,40 +6,42 @@ export const FieldNamesEnum = Object.freeze({
     minPrice: "minPrice",
 })
 
-export const formInitialState = {
-    [FieldNamesEnum.symbol]: {
-        value: "",
-        focusOnce: false,
-        error: {
-            hasAny: false,
-            message: "",
+export const formInitialStateCreator = () => {
+    return {
+        [FieldNamesEnum.symbol]: {
+            value: "",
+            focusOnce: false,
+            error: {
+                hasAny: false,
+                message: "",
+            }
+        },
+        [FieldNamesEnum.companyName]: {
+            value: "",
+            focusOnce: false,
+        },
+        [FieldNamesEnum.maxPrice]: {
+            value: "",
+            focusOnce: false,
+            error: {
+                hasAny: false,
+                message: ""
+            }
+        },
+        [FieldNamesEnum.minPrice]: {
+            value: "",
+            focusOnce: false,
+            error: {
+                hasAny: false,
+                message: ""
+            }
+        },
+        [FieldNamesEnum.industry]: {
+            value: "",
+            focusOnce: false,
         }
-    },
-    [FieldNamesEnum.companyName]: {
-        value: "",
-        focusOnce: false,
-    },
-    [FieldNamesEnum.maxPrice]: {
-        value: "",
-        focusOnce: false,
-        error: {
-            hasAny: false,
-            message: ""
-        }
-    },
-    [FieldNamesEnum.minPrice]: {
-        value: "",
-        focusOnce: false,
-        error: {
-            hasAny: false,
-            message: ""
-        }
-    },
-    [FieldNamesEnum.industry]: {
-        value: "",
-        focusOnce: false,
-    }
-} 
+    } 
+}
 
 export const formReducer = (state, {newState}) => {
     validateAllFields(newState);
@@ -60,6 +61,15 @@ export const updateStateOnBlur = (currentState, fieldName, dispatcher) => {
     let tempState = {...currentState, [fieldName]: changedField};
     dispatcher({newState: tempState});
 }
+
+export const canSubmit = (state) => {
+    for (let field in state) {
+        if (state[field].error?.hasAny) return false;
+    }
+    return true;
+}
+
+
 
 const validateAllFields  = (state) => {
     validateSymbol(state.symbol);

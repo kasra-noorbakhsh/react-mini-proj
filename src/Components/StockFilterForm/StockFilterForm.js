@@ -1,15 +1,17 @@
 import { useReducer } from "react"
-import { formReducer,  formInitialState, updateStateOnChange, updateStateOnBlur, FieldNamesEnum} from "./stockFilterFormLogic"
+import { formReducer,  formInitialStateCreator, updateStateOnChange, updateStateOnBlur, canSubmit, FieldNamesEnum} from "./stockFilterFormLogic"
 
 import "./StockFilterForm.css"
 
 const StockFilterForm = ({onSubmit}) => {
 
-    const [state, dispatch] = useReducer(formReducer, formInitialState)
+    const [state, dispatch] = useReducer(formReducer, formInitialStateCreator())
 
     const submit = (event) => {
         event.preventDefault();
-        onSubmit();
+        if (canSubmit(state)) {
+            onSubmit();
+        }
     }
 
     const onChangeProcess = (event) => {
@@ -28,7 +30,7 @@ const StockFilterForm = ({onSubmit}) => {
 
     return(
         <form onSubmit={submit} className="stock-filter-form">
-            <div>
+            <div style={{height: "10px"}}>
                 <label>نماد: </label>
                 <input className="stock-filter-form-input" type="text" placeholder="نماد..." name={FieldNamesEnum.symbol} onChange={onChangeProcess} onBlur={onBlurProcess}/>
                 {state.symbol.error.hasAny && <p className="stock-filter-form-error-message"> {state.symbol.error.message}</p>}
@@ -50,7 +52,7 @@ const StockFilterForm = ({onSubmit}) => {
                 <input className="stock-filter-form-input" type="text" placeholder="حداقل قیمت خرید..." name={FieldNamesEnum.minPrice} onChange={onChangeProcess} onBlur={onBlurProcess} onKeyDown={blockNonNumericOnKeyDown}/>
                 {state.minPrice.error.hasAny && <p className="stock-filter-form-error-message"> {state.minPrice.error.message}</p>}
             </div>
-            <input type="submit" value="ثبت"/>
+            <input className="stock-filter-form-submit" type="submit" value="ثبت" disabled={!canSubmit(state)}/>
         </form>
     )
 }
