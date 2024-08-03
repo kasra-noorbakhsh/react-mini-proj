@@ -53,16 +53,22 @@
     color: #000;
 }
 
-.stock-list-page-link {
-    text-decoration: none;
-    border: none;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    color: white;
-    border-radius: 25px;
-    padding: 15px 30px;
-    font-size: 0.9em;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-    height: 20%;
+.stock-page-add-comment-btn {
+  background-color: #2ea44f;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  margin: 10px;
+}
+
+.stock-page-add-comment-btn:hover {
+  background-color: #2c974b;
+}
+
+.stock-page-add-comment-btn:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
