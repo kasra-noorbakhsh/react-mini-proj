@@ -1,14 +1,27 @@
 import { getStocks } from "../../urls"
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const fetchStocksAsync = async () => {
-    const response = await fetch(getStocks, {
-        method: "get",
-        headers: { "Content-Type": "application/json" }
-    })
+    try {
+        const response = await fetch(getStocks, {
+            method: "get",
+            headers: { "Content-Type": "application/json" }
+        });
 
-    const data = await response.json()
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
-    return data
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        toast.error('خطا در مشاهده سهام ها. لطفاً دوباره تلاش کنید', {
+            position: 'top-left',
+            autoClose: 5000,
+        });
+        return []
+    }
 }
 
 export const setStocksAsync = async (setStock) => {
