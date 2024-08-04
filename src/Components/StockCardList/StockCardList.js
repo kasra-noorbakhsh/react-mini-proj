@@ -1,5 +1,7 @@
 import StockCard from '../StockCard/StockCard'
 import { useNavigate } from 'react-router-dom'
+import { deleteStockAsync } from './stockCardListLogic'
+import { ToastContainer } from 'react-toastify'
 
 import './StockCardList.css'
 
@@ -11,10 +13,15 @@ const StockCardList = ({ stocks }) => {
         navigate(url)
     }
 
+    const deleteStock = (stockId) => {
+        deleteStockAsync(stockId)
+    }
+
     return (
         <div className='stock-card-container'>
+            <ToastContainer />
             {stocks.map(stock => <StockCard key={stock.id} symbol={stock.symbol} companyName={stock.companyName} industry={stock.industry} id={stock.id}
-                onClickProcess={loadViewStockPage} />)}
+                onClickProcess={loadViewStockPage} deleteStockProcess={deleteStock} />)}
         </div>
     )
 }
