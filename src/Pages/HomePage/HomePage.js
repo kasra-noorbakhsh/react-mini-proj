@@ -2,8 +2,8 @@ import { Link } from "react-router-dom"
 
 import './HomePage.css'
 
-const HomePage = () =>{
-    return(
+const HomePage = () => {
+    return (
         <div className="home-page">
             <Link to="/stock-list">مشاهده سهام ها</Link>
             <Link to="/add-stock">اضافه کردن سهام</Link>

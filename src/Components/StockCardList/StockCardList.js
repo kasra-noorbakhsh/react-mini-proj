@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import './StockCardList.css'
 
-const StockCardList = ( { stocks } ) => {
+const StockCardList = ({ stocks }) => {
     const navigate = useNavigate()
 
     const loadViewStockPage = (stockId) => {
@@ -11,10 +11,10 @@ const StockCardList = ( { stocks } ) => {
         navigate(url)
     }
 
-    return(
+    return (
         <div className='stock-card-container'>
             {stocks.map(stock => <StockCard key={stock.id} symbol={stock.symbol} companyName={stock.companyName} industry={stock.industry} id={stock.id}
-                        onClickProcess={loadViewStockPage}/>)}
+                onClickProcess={loadViewStockPage} />)}
         </div>
     )
 }

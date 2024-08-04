@@ -6,12 +6,12 @@
     height: 40px;
 }
 
-.stock-filter-form-input{
+.stock-filter-form-input {
     border-style: none;
     border-bottom-style: solid;
 }
 
-.stock-filter-form-input:focus{
+.stock-filter-form-input:focus {
     outline: none;
     border-color: aqua;
 }
@@ -34,7 +34,7 @@
     color: #FFFFFF;
     cursor: pointer;
     display: inline-flex;
-    font-family: CircularStd,sans-serif;
+    font-family: CircularStd, sans-serif;
     font-size: 1rem;
     height: auto;
     justify-content: center;
@@ -43,23 +43,23 @@
     position: relative;
     text-align: center;
     text-decoration: none;
-    transition: background-color .2s,background-position .2s;
+    transition: background-color .2s, background-position .2s;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: top;
     white-space: nowrap;
-  }
-  
+}
+
 .stock-filter-form-submit:active,
 .stock-filter-form-submit:focus {
     outline: none;
 }
-  
+
 .stock-filter-form-submit:hover {
     background-position: -20px -20px;
 }
-  
+
 .stock-filter-form-submit:focus:not(:active) {
     box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
 }

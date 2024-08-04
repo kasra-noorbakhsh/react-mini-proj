@@ -1,10 +1,10 @@
-import { getUsers } from "../../urls" 
+import { getUsers } from "../../urls"
 
 const fetchUsersAsync = async () => {
     const response = await fetch(getUsers, {
         method: "get",
-        headers: {"Content-Type": "application/json"}
-        })
+        headers: { "Content-Type": "application/json" }
+    })
 
     const data = await response.json()
 
@@ -15,7 +15,7 @@ export const setUsersAsync = async (setUsers) => {
     const data = await fetchUsersAsync()
 
     const tempUsers = data.map((data) => {
-        return({
+        return ({
             id: data.id,
             name: data.name
         })

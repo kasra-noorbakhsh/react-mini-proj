@@ -5,8 +5,6 @@ import { setStocksAsync } from "./stockListPageLogic"
 
 import './stockListPageLogic'
 
-import './StockListPage.css'
-
 const StockListPage = () => {
 
     const [stocks, setStocks] = useState([])
@@ -15,10 +13,10 @@ const StockListPage = () => {
         setStocksAsync(setStocks)
     }
 
-    return(
+    return (
         <div className="stock-page">
-            <StockFilterForm onSubmit={submitForm}/>
-            <StockCardList stocks={stocks}/>
+            <StockFilterForm onSubmit={submitForm} />
+            <StockCardList stocks={stocks} />
         </div>
     )
 

@@ -1,4 +1,4 @@
-.header{
+.header {
     display: flex;
     background: linear-gradient(to right, #ff7e5f, #feb47b);
     color: white;
@@ -8,7 +8,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.header-link{
+.header-link {
     text-decoration: none;
     border: none;
     background: linear-gradient(to right, #6a11cb, #2575fc);
@@ -22,12 +22,12 @@
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.header-link:hover{
+.header-link:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-.header-link:active{
+.header-link:active {
     transform: translateY(0);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

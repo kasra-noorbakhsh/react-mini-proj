@@ -3,17 +3,17 @@ import UserCard from '../UserCard/UserCard'
 
 import './UserCardList.css'
 
-const UserCardList = ( { users} ) => {
+const UserCardList = ({ users }) => {
     const navigate = useNavigate()
 
-    const onClickProcess = ( userId ) => {
+    const onClickProcess = (userId) => {
         const url = `/user/${userId}`
         navigate(url)
-    } 
+    }
 
-    return(
+    return (
         <div className='user-card-container'>
-            {users.map(user => <UserCard key={user.id} name={user.name} id={user.id} onClickProcess={onClickProcess}/>)}
+            {users.map(user => <UserCard key={user.id} name={user.name} id={user.id} onClickProcess={onClickProcess} />)}
         </div>
     )
 }

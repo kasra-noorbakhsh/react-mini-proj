@@ -4,7 +4,7 @@ import * as yup from 'yup'
 
 export const schema = yup.object().shape({
     symbol: yup.string().required("فیلد نماد اجباری است").min(3, "حداقل طول نماد رعایت نشده است")
-    .max(6, "حداکثر طول نماد رعایت نشده است"),
+        .max(6, "حداکثر طول نماد رعایت نشده است"),
 
     companyName: yup.string().required("فیلد نام شرکت اجباری است"),
 
@@ -19,21 +19,21 @@ export const schema = yup.object().shape({
 
 export const addStockAsync = async (data) => {
 
-    try{
+    try {
         const response = await fetch(postStock, {
-                method: 'POST', 
-                headers:{
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    symbol: data.symbol,
-                    companyName: data.companyName,
-                    purchase: data.price,
-                    lastDiv: data.lastPrice,
-                    industry: data.industry,
-                    marketCap: data.value,
-                }),
-            })
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                symbol: data.symbol,
+                companyName: data.companyName,
+                purchase: data.price,
+                lastDiv: data.lastPrice,
+                industry: data.industry,
+                marketCap: data.value,
+            }),
+        })
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -41,14 +41,14 @@ export const addStockAsync = async (data) => {
 
         toast.success('سهام شما با موفقیت اضافه شد', {
             position: 'top-left',
-            autoClose: 5000, 
+            autoClose: 5000,
         });
     }
 
-    catch (error){
+    catch (error) {
         toast.error('خطا در اضافه کردن سهام. لطفاً دوباره تلاش کنید', {
             position: 'top-left',
-            autoClose: 5000, 
+            autoClose: 5000,
         });
     }
 }

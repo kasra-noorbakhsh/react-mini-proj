@@ -1,4 +1,4 @@
-.user-page{
+.user-page {
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
@@ -6,7 +6,7 @@
     font-size: larger;
 }
 
-.two-first-properties{
+.two-first-properties {
     display: flex;
     flex-direction: column;
     background: linear-gradient(to right, #ff7e5f, #feb47b);
@@ -18,7 +18,7 @@
     font-weight: bold;
 }
 
-.portfolio{
+.portfolio {
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -32,12 +32,12 @@
     border-radius: 7px;
 }
 
-.id{
+.id {
     color: orangered;
     margin: 8px;
 }
 
-.portfolio-header{
+.portfolio-header {
     display: flex;
     background: linear-gradient(to right, #ff7e5f, #feb47b);
     color: black;
@@ -49,11 +49,11 @@
     border-radius: 1rem;
 }
 
-.portfolio:hover{
+.portfolio:hover {
     box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
 }
 
-.user-page img{
+.user-page img {
     width: 175px;
     height: 200px;
     border-radius: 5px;

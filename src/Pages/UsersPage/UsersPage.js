@@ -4,19 +4,17 @@ import { setUsersAsync } from "./usersPageLogic"
 
 import './usersPageLogic'
 
-import './UsersPage.css'
-
-const UsersPage = () =>{
+const UsersPage = () => {
 
     const [users, setUsers] = useState([])
 
-    useEffect(() =>{
+    useEffect(() => {
         setUsersAsync(setUsers)
     }, [])
 
-    return(
+    return (
         <div className="users-page">
-            <UserCardList users={users}/>
+            <UserCardList users={users} />
         </div>
     )
 }

@@ -1,4 +1,4 @@
-.user-card{
+.user-card {
     display: flex;
     flex-direction: column;
     font-size: large;
@@ -15,12 +15,12 @@
     color: mediumblue;
 }
 
-.user-card:hover{
+.user-card:hover {
     box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 
-.user-card img{
+.user-card img {
     width: 175px;
     height: 200px;
     border-radius: 5px;

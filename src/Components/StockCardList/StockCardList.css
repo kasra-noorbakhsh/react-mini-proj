@@ -1,4 +1,4 @@
-.stock-card-container{
+.stock-card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

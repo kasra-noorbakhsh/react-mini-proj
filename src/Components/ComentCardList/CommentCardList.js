@@ -1,5 +1,6 @@
 import CommentCard from "../CommentCard/CommentCard";
-const CommentCardList = ({comments}) => {
+
+const CommentCardList = ({ comments }) => {
 
     return (
         <div className="comment-card-list">

@@ -13,14 +13,14 @@
 
 .stock-add-form label {
     width: auto;
-    margin-right: 10px; 
+    margin-right: 10px;
 }
 
 .stock-add-form-input {
     flex: 1;
     border-style: none;
     border-bottom-style: solid;
-    padding: 5px; 
+    padding: 5px;
 }
 
 .stock-add-form-submit {
@@ -44,7 +44,7 @@
     position: relative;
     text-align: center;
     text-decoration: none;
-    transition: background-color .2s,background-position .2s;
+    transition: background-color .2s, background-position .2s;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
@@ -52,22 +52,22 @@
     white-space: nowrap;
     width: 150px;
     align-self: center;
-  }
-  
+}
+
 .stock-add-form-submit:active,
 .stock-add-form-submit:focus {
     outline: none;
 }
-  
+
 .stock-add-form-submit:hover {
     background-position: -20px -20px;
 }
-  
+
 .stock-add-form-submit:focus:not(:active) {
     box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
 }
 
-.add-form-error-message{
+.add-form-error-message {
     color: red;
     text-align: center;
 }

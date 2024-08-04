@@ -40,26 +40,26 @@ export const formInitialStateCreator = () => {
             value: "",
             focusOnce: false,
         }
-    } 
+    }
 }
 
-export const formReducer = (state, {newState}) => {
+export const formReducer = (state, { newState }) => {
     validateAllFields(newState);
     return newState;
 }
 
 export const updateStateOnChange = (currentState, fieldName, newValue, dispatcher) => {
     const targetField = currentState[fieldName];
-    const changedField = {...targetField, value: newValue};
-    let tempState = {...currentState, [fieldName]: changedField};
-    dispatcher({newState: tempState});
+    const changedField = { ...targetField, value: newValue };
+    let tempState = { ...currentState, [fieldName]: changedField };
+    dispatcher({ newState: tempState });
 }
 
 export const updateStateOnBlur = (currentState, fieldName, dispatcher) => {
     const targetField = currentState[fieldName];
-    const changedField = {...targetField, focusOnce: true};
-    let tempState = {...currentState, [fieldName]: changedField};
-    dispatcher({newState: tempState});
+    const changedField = { ...targetField, focusOnce: true };
+    let tempState = { ...currentState, [fieldName]: changedField };
+    dispatcher({ newState: tempState });
 }
 
 export const canSubmit = (state) => {
@@ -71,7 +71,7 @@ export const canSubmit = (state) => {
 
 
 
-const validateAllFields  = (state) => {
+const validateAllFields = (state) => {
     validateSymbol(state.symbol);
     validateMinPrice(state.minPrice, state.maxPrice);
 }
@@ -79,8 +79,8 @@ const validateAllFields  = (state) => {
 const validateMinPrice = (minPrice, maxPrice) => {
     if (minPrice.value === "" || minPrice.focusOnce === false ||
         maxPrice.value === "" || maxPrice.focusOnce === false) {
-            clearErrorObject(minPrice.error);
-            return;
+        clearErrorObject(minPrice.error);
+        return;
     }
 
     if (Number(minPrice.value) > Number(maxPrice.value)) {

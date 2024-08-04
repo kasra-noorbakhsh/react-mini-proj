@@ -1,13 +1,13 @@
 import React from 'react';
-import  {useEffect, useState} from 'react'
-import {useParams, Link} from "react-router-dom"
-import {setStockAsync} from "./stockPageLogic";
+import { useEffect, useState } from 'react'
+import { useParams } from "react-router-dom"
+import { setStockAsync } from "./stockPageLogic";
 import CommentCreatorPopup from '../../Components/CommentCreatorPopup/CommentCreatorPopup';
 
 import "./StockPage.css"
 
 const StockPage = () => {
-    const {stockId} = useParams()
+    const { stockId } = useParams()
     const [showCommentPopup, setShowCommentPopup] = useState(false);
 
     const [stock, setStock] = useState({})
@@ -26,9 +26,9 @@ const StockPage = () => {
 
     return (
         <div>
-            <CommentCreatorPopup show={showCommentPopup} closeFunc={closeCommentPopup}/>
+            <CommentCreatorPopup show={showCommentPopup} closeFunc={closeCommentPopup} />
             <div className="info-box">
-                <img src="../aks.jpg" alt="Stock Image" className="info-box-image"/>
+                <img src="../aks.jpg" alt="Avatar" className="info-box-image" />
                 <div className="info-box-content">
                     <h2 className="info-box-title">مشخصات سهام</h2>
                     <ul className="info-list">

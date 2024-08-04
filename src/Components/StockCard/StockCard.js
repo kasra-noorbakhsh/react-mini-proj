@@ -1,9 +1,9 @@
 import './StockCard.css'
 
 const StockCard = ({ symbol, companyName, industry, id, onClickProcess: viewStockPage }) => {
-    return(
+    return (
         <div className="stock-card">
-            <img src="../aks.jpg" alt='Avatar'/>
+            <img src="../aks.jpg" alt='Avatar' />
             <div>
                 <p>نماد: {symbol}</p>
                 <p>نام شرکت: {companyName}</p>
@@ -11,7 +11,7 @@ const StockCard = ({ symbol, companyName, industry, id, onClickProcess: viewStoc
             </div>
             <div>
                 <button className='view-stock-page-btn stock-card-btn' onClick={() => viewStockPage(id)}>مشاهده سهام</button>
-                <button className='delete-stock-btn stock-card-btn'>حذف سهام</button>
+                <button className='delete-stock-btn stock-card-btn' >حذف سهام</button>
             </div>
         </div>
     )

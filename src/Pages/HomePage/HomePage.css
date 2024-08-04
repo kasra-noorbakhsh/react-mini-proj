@@ -1,11 +1,11 @@
-.home-page{
+.home-page {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
 }
 
-.home-page a{
+.home-page a {
     text-decoration: none;
     border: none;
     background: linear-gradient(to right, #00c6ff, #0072ff);
@@ -18,12 +18,12 @@
     transition: transform 0.4s, box-shadow 0.4s;
 }
 
-.home-page a:hover{
+.home-page a:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-.home-page a:active{
+.home-page a:active {
     transform: translateY(0);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
