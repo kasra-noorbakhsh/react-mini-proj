@@ -9,7 +9,7 @@ const CommentCreatorPopup = ({ show, closeFunc }) => {
                 <form className="comment-creator-popup-form">
                     <input type="text" name="topic" />
                     <textarea name="content" />
-                    <div>
+                    <div className="popped">
                         <button onClick={closeFunc}>انصراف</button>
                         <button onClick={closeFunc}>ثبت</button>
                     </div>
