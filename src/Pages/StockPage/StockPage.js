@@ -1,6 +1,6 @@
 import React from 'react';
 import  {useEffect, useState} from 'react'
-import {useParams} from "react-router-dom"
+import {useParams, Link} from "react-router-dom"
 import {setStockAsync} from "./stockPageLogic";
 import CommentCreatorPopup from '../../Components/CommentCreatorPopup/CommentCreatorPopup';
 
