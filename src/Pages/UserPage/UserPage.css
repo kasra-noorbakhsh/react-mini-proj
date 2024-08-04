@@ -59,3 +59,9 @@
     border-radius: 5px;
     mix-blend-mode: multiply;
 }
+
+.portfolio-items{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

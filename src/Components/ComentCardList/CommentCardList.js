@@ -1,6 +1,9 @@
 import CommentCard from "../CommentCard/CommentCard";
+import {useEffect, useState} from "react";
 
 const CommentCardList = ({ comments }) => {
+
+    // const [CommentsList, setCommentsList] = useState([]);
 
     return (
         <div className="comment-card-list">

@@ -25,7 +25,7 @@ const UserPage = () => {
             </div>
 
             <div className='portfolio'> <div className='portfolio-header'>پرتفولیو کاربر:</div>
-
+            <div className='portfolio-items'>
                 {user.portfolio && user.portfolio.map((portfolioItem, index) => (
                     <div key={index}>
                         <p className='id'>شناسه: {portfolioItem.id}</p>
@@ -37,6 +37,7 @@ const UserPage = () => {
                         <p>ارزش حقیقی: {portfolioItem.marketCap}</p>
                     </div>
                 ))}
+            </div>
             </div>
         </div>
     )
