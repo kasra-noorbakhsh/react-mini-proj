@@ -19,7 +19,7 @@ const StockListPage = () => {
         <div className="stock-page">
             <ToastContainer />
             <StockFilterForm onSubmit={submitForm} />
-            <StockCardList stocks={stocks} />
+            <StockCardList initialStocks={stocks} />
         </div>
     )
 

@@ -3,7 +3,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export const deleteStockAsync = async (stockId) => {
     const url = `http://localhost:5206/api/stock/${stockId}`
-    
+
     try {
         const response = await fetch(url, {
             method: 'DELETE',
@@ -20,6 +20,8 @@ export const deleteStockAsync = async (stockId) => {
             position: 'top-left',
             autoClose: 5000,
         });
+
+        return true
     }
 
     catch (error) {
@@ -27,5 +29,7 @@ export const deleteStockAsync = async (stockId) => {
             position: 'top-left',
             autoClose: 5000,
         });
+
+        return false
     }
 }

@@ -2,19 +2,28 @@ import StockCard from '../StockCard/StockCard'
 import { useNavigate } from 'react-router-dom'
 import { deleteStockAsync } from './stockCardListLogic'
 import { ToastContainer } from 'react-toastify'
+import { useState, useEffect } from 'react';
 
 import './StockCardList.css'
 
-const StockCardList = ({ stocks }) => {
+const StockCardList = ({ initialStocks }) => {
+    const [stocks, setStocks] = useState(initialStocks);
     const navigate = useNavigate()
+
+    useEffect(() => {
+        setStocks(initialStocks);
+    }, [initialStocks]);
 
     const loadViewStockPage = (stockId) => {
         const url = `/stock/${stockId}`
         navigate(url)
     }
 
-    const deleteStock = (stockId) => {
-        deleteStockAsync(stockId)
+    const deleteStock = async (stockId) => {
+        const success = await deleteStockAsync(stockId);
+        if (success) {
+            setStocks(stocks.filter(stock => stock.id !== stockId));
+        }
     }
 
     return (
