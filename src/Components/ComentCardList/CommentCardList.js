@@ -1,12 +1,12 @@
 import CommentCard from "../CommentCard/CommentCard";
-import {useEffect, useState} from "react";
+
+import './CommentCardList.css'
 
 const CommentCardList = ({ comments }) => {
 
-    // const [CommentsList, setCommentsList] = useState([]);
-
     return (
-        <div className="comment-card-list">
+        <div className="comment-card-list"> 
+        <p className="comment-list-header-message">دیدگاه ها:</p>
             {comments.map(comment => <CommentCard key={comment.id} comment={comment} />)}
         </div>
     )
