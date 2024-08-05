@@ -7,18 +7,12 @@ function App() {
 
   return (
     <div className="App">
-
       <Router>
-
         <Header />
-
         <MainContent />
-
       </Router>
-
     </div>
   );
-
 }
 
 export default App;

@@ -1,4 +1,4 @@
-import { getStocks } from "../../urls"
+import { getStocks } from "../../apis"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

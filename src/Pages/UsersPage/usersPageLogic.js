@@ -1,4 +1,4 @@
-import { getUsers } from "../../urls"
+import { getUsers } from "../../apis"
 
 const fetchUsersAsync = async () => {
     const response = await fetch(getUsers, {

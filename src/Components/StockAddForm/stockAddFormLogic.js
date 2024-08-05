@@ -1,4 +1,4 @@
-import { postStock } from "../../urls"
+import { postStock } from "../../apis"
 import { toast } from 'react-toastify';
 import * as yup from 'yup'
 

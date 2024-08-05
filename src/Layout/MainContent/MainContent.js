@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 
+import UrlEnum from "../../urls"
+
 import HomePage from "../../Pages/HomePage/HomePage"
 import StockListPage from "../../Pages/StockListPage/StockListPage"
 import AddStockPage from "../../Pages/AddStockPage/AddStockPage"
@@ -9,19 +11,17 @@ import StockPage from "../../Pages/StockPage/StockPage"
 
 const MainContent = () => {
 
-    return (
-        <Routes>
-
-            <Route path='/' element={<HomePage />}></Route>
-            <Route path='/stock-list' element={<StockListPage />}></Route>
-            <Route path='/add-stock' element={<AddStockPage />}></Route>
-            <Route path='/user-list' element={<UsersPage />}></Route>
-            <Route path="/user/:userId" element={<UserPage />}></Route>
-            <Route path="/stock/:stockId" element={<StockPage />}></Route>
-
-        </Routes>
-    )
-
+	return (
+		<Routes>
+			<Route path={UrlEnum.home} element={<HomePage />} />
+			<Route path={UrlEnum.stockList} element={<StockListPage />} />
+			<Route path={UrlEnum.addStock} element={<AddStockPage />} />
+			<Route path={UrlEnum.userList} element={<UsersPage />} />
+			<Route path={UrlEnum.user} element={<UserPage />} />
+			<Route path={UrlEnum.stock} element={<StockPage />} />
+			<Route path="*" element={<div>404</div>} />
+		</Routes>
+	)
 }
 
 export default MainContent
