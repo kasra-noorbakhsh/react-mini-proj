@@ -5,6 +5,8 @@ import { setStockAsync } from "./stockPageLogic";
 import CommentCreatorPopup from '../../Components/CommentCreatorPopup/CommentCreatorPopup';
 import CommentCardList from "../../Components/ComentCardList/CommentCardList";
 import "./StockPage.css"
+import {ToastContainer} from "react-toastify";
+import {CommentCreatorPopupAsync} from "./stockPageLogic";
 
 const StockPage = () => {
     const { stockId } = useParams()
@@ -24,10 +26,17 @@ const StockPage = () => {
         setShowCommentPopup(false);
     }
 
+    const AddCommentProcess = async (comment)  => {
+        const success = await CommentCreatorPopupAsync(comment, stockId);
+         if (success)
+         {setStockAsync(setStock, stockId);}
+    }
+
     console.log(stock.comments);
     return (
         <div>
-            <CommentCreatorPopup show={showCommentPopup} closeFunc={closeCommentPopup} />
+            <ToastContainer />
+            <CommentCreatorPopup show={showCommentPopup} closeFunc={closeCommentPopup} stockId={stockId} onSubmitFunc={AddCommentProcess} />
             <div className="info-box">
                 <img src="../aks.jpg" alt="Avatar" className="info-box-image" />
                 <div className="info-box-content">

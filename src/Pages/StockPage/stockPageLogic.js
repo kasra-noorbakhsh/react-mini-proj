@@ -1,4 +1,6 @@
 import { getStocks } from "../../urls";
+import {toast} from "react-toastify";
+
 
 const fetchStockAsync = async (url) => {
     const response = await fetch(url, {
@@ -25,3 +27,45 @@ export const setStockAsync = async (setStock, Id) => {
     }
     setStock(tempStocks);
 }
+
+
+
+export const CommentCreatorPopupAsync = async (data, stockId) => {
+    const url = `http://localhost:5206/api/comment/${stockId}`
+    console.log(data)
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                title: data.title,
+                content: data.content,
+                userId: 1,
+            }),
+        })
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        toast.success('دیدگاه شما با موفقیت اضافه شد', {
+            position: 'top-left',
+            autoClose: 5000,
+        });
+        return true
+    }
+
+    catch (error) {
+        toast.error('خطا در اضافه کردن دیدگاه. لطفاً دوباره تلاش کنید', {
+            position: 'top-left',
+            autoClose: 5000,
+        });
+        return false
+
+    }
+
+}
+
+

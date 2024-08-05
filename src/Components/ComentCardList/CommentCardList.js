@@ -1,9 +1,15 @@
 import CommentCard from "../CommentCard/CommentCard";
 
 import './CommentCardList.css'
+import {useEffect, useState} from "react";
 
-const CommentCardList = ({ comments }) => {
+const CommentCardList = ({ comments: initialComments }) => {
 
+    const [comments, setComments] = useState(initialComments);
+
+    useEffect(() => {
+        setComments(initialComments);
+    }, [initialComments]);
     return (
         <div className="comment-card-list"> 
         <p className="comment-list-header-message">دیدگاه ها:</p>

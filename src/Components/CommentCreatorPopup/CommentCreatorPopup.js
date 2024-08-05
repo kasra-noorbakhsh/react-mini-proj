@@ -1,22 +1,58 @@
 import "./CommentCreatorPopup.css";
+import { useState } from "react";
 
-const CommentCreatorPopup = ({ show, closeFunc }) => {
+const CommentCreatorPopup = ({ show, closeFunc, onSubmitFunc }) => {
+    const [comment, setComment] = useState({
+        title: "",
+        content: "",
+    });
 
-    if (show === false) return (<></>);
+    const addCommentContentProcess = (e) => {
+        setComment((prevComment) => ({
+            ...prevComment,
+            content: e.target.value
+        }));
+    };
+
+
+    const addCommentTitleProcess = (e) => {
+        setComment((prevComment) => ({
+            ...prevComment,
+            title: e.target.value
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        onSubmitFunc(comment)
+        closeFunc();
+    };
+
+    if (!show) return null;
+
     return (
         <div className="comment-creator-popup-container">
             <div className="comment-creator-popup-content">
-                <form className="comment-creator-popup-form">
-                    <input type="text" name="topic" />
-                    <textarea name="content" />
+                <form className="comment-creator-popup-form" onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        name="topic"
+                        value={comment.title}
+                        onChange={addCommentTitleProcess}
+                    />
+                    <textarea
+                        name="content"
+                        value={comment.content}
+                        onChange={addCommentContentProcess}
+                    />
                     <div className="popped">
-                        <button onClick={closeFunc}>انصراف</button>
-                        <button onClick={closeFunc}>ثبت</button>
+                        <button type="button" onClick={closeFunc}>انصراف</button>
+                        <button type="submit">ثبت</button>
                     </div>
                 </form>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default CommentCreatorPopup
+export default CommentCreatorPopup;

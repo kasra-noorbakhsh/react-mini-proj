@@ -2,7 +2,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const deleteStockAsync = async (stockId) => {
-    const url = `http://localhost:5206/api/stock/${stockId}`
+    const url = `http://localhost:5206/api/stock/force/${stockId}`
 
     try {
         const response = await fetch(url, {
