@@ -1,20 +1,18 @@
+import API from "../../api"
+
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const deleteStockAsync = async (stockId) => {
-    const url = `http://localhost:5206/api/stock/force/${stockId}`
+    const url = API.forceDeleteStock(stockId);
 
     try {
-        const response = await fetch(url, {
+        await fetch(url, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
             },
         })
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
 
         toast.success('سهام شما با موفقیت حذف شد', {
             position: 'top-left',
@@ -23,7 +21,6 @@ export const deleteStockAsync = async (stockId) => {
 
         return true
     }
-
     catch (error) {
         toast.error('خطا در حذف کردن سهام. لطفاً دوباره تلاش کنید', {
             position: 'top-left',

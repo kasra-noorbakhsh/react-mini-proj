@@ -12,7 +12,6 @@ const AddStockPage = () => {
             <StockAddForm />
         </div>
     )
-
 }
 
 export default AddStockPage

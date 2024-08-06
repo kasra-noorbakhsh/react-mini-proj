@@ -1,4 +1,4 @@
-import { postStock } from "../../apis"
+import API from "../../api"
 import { toast } from 'react-toastify';
 import * as yup from 'yup'
 
@@ -20,31 +20,26 @@ export const schema = yup.object().shape({
 export const addStockAsync = async (data) => {
 
     try {
-        const response = await fetch(postStock, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                symbol: data.symbol,
-                companyName: data.companyName,
-                purchase: data.price,
-                lastDiv: data.lastPrice,
-                industry: data.industry,
-                marketCap: data.value,
-            }),
-        })
+            await fetch(API.postStock, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    symbol: data.symbol,
+                    companyName: data.companyName,
+                    purchase: data.price,
+                    lastDiv: data.lastPrice,
+                    industry: data.industry,
+                    marketCap: data.value,
+                }),
+            })
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        toast.success('سهام شما با موفقیت اضافه شد', {
-            position: 'top-left',
-            autoClose: 5000,
-        });
+            toast.success('سهام شما با موفقیت اضافه شد', {
+                position: 'top-left',
+                autoClose: 5000,
+            });
     }
-
     catch (error) {
         toast.error('خطا در اضافه کردن سهام. لطفاً دوباره تلاش کنید', {
             position: 'top-left',

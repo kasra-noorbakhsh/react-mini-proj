@@ -1,7 +1,7 @@
-import { getUsers } from "../../apis"
+import API from "../../api"
 
 const fetchUsersAsync = async () => {
-    const response = await fetch(getUsers, {
+    const response = await fetch(API.getUsers, {
         method: "get",
         headers: { "Content-Type": "application/json" }
     })

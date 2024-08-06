@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom"
 
-import UrlEnum from "../../urls"
+import Url from "../../url"
 
 import HomePage from "../../Pages/HomePage/HomePage"
 import StockListPage from "../../Pages/StockListPage/StockListPage"
@@ -13,12 +13,12 @@ const MainContent = () => {
 
 	return (
 		<Routes>
-			<Route path={UrlEnum.home} element={<HomePage />} />
-			<Route path={UrlEnum.stockList} element={<StockListPage />} />
-			<Route path={UrlEnum.addStock} element={<AddStockPage />} />
-			<Route path={UrlEnum.userList} element={<UsersPage />} />
-			<Route path={UrlEnum.user} element={<UserPage />} />
-			<Route path={UrlEnum.stock} element={<StockPage />} />
+			<Route path={Url.home} element={<HomePage />} />
+			<Route path={Url.stockList} element={<StockListPage />} />
+			<Route path={Url.addStock} element={<AddStockPage />} />
+			<Route path={Url.userList} element={<UsersPage />} />
+			<Route path={Url.userTemplate} element={<UserPage />} />
+			<Route path={Url.stockTemplate} element={<StockPage />} />
 			<Route path="*" element={<div>404</div>} />
 		</Routes>
 	)

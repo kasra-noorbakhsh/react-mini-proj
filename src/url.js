@@ -1,15 +1,18 @@
-const UrlEnum = Object.freeze({
+const Url = Object.freeze({
     home: "/",
     stockList: "/stock-list",
     addStock: "/add-stock",
     userList: "/user-list",
-    user: "/user/:userId",
-    stock: "/stock/:stockId",
+    userTemplate: "/user/:userId",
+    user: (id) => `/user/${id}`,
+    stockTemplate: "/stock/:stockId",
+    stock: (id) => `/stock/${id}`,
 });
 
 export const isNotFound = (currentUrl) => {
-    for (const validUrl in UrlEnum) {
-        if (compareUrls(UrlEnum[validUrl], currentUrl)) return false;
+    for (const validUrl in Url) {
+        if (typeof Url[validUrl] !== "string") continue;
+        if (compareUrls(Url[validUrl], currentUrl)) return false;
     }
     return true;
 }
@@ -27,4 +30,4 @@ export const compareUrls = (baseUrl, realUrl) => {
     return true;
 }
 
-export default UrlEnum
+export default Url

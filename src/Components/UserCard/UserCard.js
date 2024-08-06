@@ -1,11 +1,11 @@
 import './UserCard.css'
 
-const UserCard = ({ name, id, onClickProcess }) => {
+const UserCard = ({ userData, onClickProcess }) => {
     return (
-        <div className="user-card" onClick={() => { onClickProcess(id) }}>
-            <img src="../aks.jpg" alt='Avatar' />
+        <div className="user-card" onClick={() => { onClickProcess(userData.id) }}>
+            <img className='user-card-img' src="../aks.jpg" alt='Avatar' />
             <div>
-                <p>نام کاربری: {name}</p>
+                <p>نام کاربری: {userData.name}</p>
             </div>
         </div>
     )

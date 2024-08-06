@@ -13,7 +13,7 @@ const UsersPage = () => {
     }, [])
 
     return (
-        <div className="users-page">
+        <div>
             <UserCardList users={users} />
         </div>
     )

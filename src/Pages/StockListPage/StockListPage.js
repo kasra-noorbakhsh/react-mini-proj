@@ -16,7 +16,7 @@ const StockListPage = () => {
     }
 
     return (
-        <div className="stock-page">
+        <div>
             <ToastContainer />
             <StockFilterForm onSubmit={submitForm} />
             <StockCardList initialStocks={stocks} />

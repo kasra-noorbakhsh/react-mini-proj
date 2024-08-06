@@ -1,4 +1,4 @@
-import { getStocks } from "../../apis";
+import API from "../../api";
 import {toast} from "react-toastify";
 
 
@@ -13,7 +13,7 @@ const fetchStockAsync = async (url) => {
 }
 
 export const setStockAsync = async (setStock, Id) => {
-    const url = `${getStocks}/with-comments/${Id}`
+    const url = `${API.getStocks}/with-comments/${Id}`
     const data = await fetchStockAsync(url)
 
     const tempStocks = {
@@ -28,11 +28,8 @@ export const setStockAsync = async (setStock, Id) => {
     setStock(tempStocks);
 }
 
-
-
 export const CommentCreatorPopupAsync = async (data, stockId) => {
     const url = `http://localhost:5206/api/comment/${stockId}`
-    console.log(data)
     try {
         const response = await fetch(url, {
             method: 'POST',
@@ -67,5 +64,3 @@ export const CommentCreatorPopupAsync = async (data, stockId) => {
     }
 
 }
-
-

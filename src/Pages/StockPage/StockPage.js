@@ -32,7 +32,6 @@ const StockPage = () => {
          {setStockAsync(setStock, stockId);}
     }
 
-    console.log(stock.comments);
     return (
         <div>
             <ToastContainer />

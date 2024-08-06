@@ -1,23 +1,23 @@
 import { Link, useLocation } from "react-router-dom"
 
-import { isNotFound, compareUrls, } from "../../urls"
-// TODO: use compareUrls for showing back link btn in header
+import { isNotFound, compareUrls, } from "../../url"
+import Url from "../../url"
 
 
 import './Header.css'
 
 const Header = () => {
-    const { pathname: url } = useLocation()
+	const { pathname: url } = useLocation()
 
-    if (isNotFound(url)) return <></>;
+	if (isNotFound(url)) return <></>;
 
-    return (
-        <div className="header">
-            <Link to="/" className="header-link">بازگشت به صفحه اول</Link>
-            {url.startsWith("/stock/") && <Link to="/stock-list" className="header-link header-back-link">بازگشت به صفحه نمایش سهام ها</Link>}
-            {url.startsWith("/user/") && <Link to="/user-list" className="header-link header-back-link">بازگشت به صفحه نمایش کاربران</Link>}
-        </div>
-    )
+	return (
+		<div className="header">
+			<Link to={Url.home} className="header-link">بازگشت به صفحه اول</Link>
+			{ compareUrls(Url.stockTemplate, url) && <Link to={Url.stockList} className="header-link header-back-link">بازگشت به صفحه نمایش سهام ها</Link>}
+			{ compareUrls(Url.userTemplate, url) && <Link to={Url.userList} className="header-link header-back-link">بازگشت به صفحه نمایش کاربران</Link>}
+		</div>
+	)
 }
 
 export default Header

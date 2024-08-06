@@ -1,10 +1,10 @@
-import { getStocks } from "../../apis"
+import API from "../../api"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const fetchStocksAsync = async () => {
     try {
-        const response = await fetch(getStocks, {
+        const response = await fetch(API.getStocks, {
             method: "get",
             headers: { "Content-Type": "application/json" }
         });
