@@ -6,7 +6,7 @@
     font-size: larger;
 }
 
-.two-first-properties {
+.user-main-data-card {
     display: flex;
     flex-direction: column;
     background: linear-gradient(to right, #ff7e5f, #feb47b);
@@ -32,7 +32,11 @@
     border-radius: 7px;
 }
 
-.id {
+.portfolio:hover {
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.user-page-id-seperator {
     color: orangered;
     margin: 8px;
 }
@@ -49,11 +53,7 @@
     border-radius: 1rem;
 }
 
-.portfolio:hover {
-    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
-}
-
-.user-page img {
+.user-page-img {
     width: 175px;
     height: 200px;
     border-radius: 5px;

@@ -1,12 +1,12 @@
-import React from 'react';
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import { setStockAsync } from "./stockPageLogic";
 import CommentCreatorPopup from '../../Components/CommentCreatorPopup/CommentCreatorPopup';
 import CommentCardList from "../../Components/ComentCardList/CommentCardList";
-import "./StockPage.css"
 import {ToastContainer} from "react-toastify";
 import {CommentCreatorPopupAsync} from "./stockPageLogic";
+
+import "./StockPage.css"
 
 const StockPage = () => {
     const { stockId } = useParams()

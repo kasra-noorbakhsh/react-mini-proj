@@ -1,3 +1,5 @@
+import API from '../../api'
+
 const fetchUserAsync = async (url) => {
     const response = await fetch(url, {
         method: "get",
@@ -9,7 +11,7 @@ const fetchUserAsync = async (url) => {
 }
 
 export const setUserAsync = async (setUser, id) => {
-    const url = `http://localhost:5206/api/user/${id}/with-portfolio`
+    const url = API.getUserEncludePortfolio(id)
     const data = await fetchUserAsync(url)
 
     const tempUser = data.map((data) => {
@@ -19,5 +21,6 @@ export const setUserAsync = async (setUser, id) => {
             portfolio: data.portfolio
         })
     })
+    // TODO: fix the format of data that comes from back
     setUser(tempUser[0])
 }
