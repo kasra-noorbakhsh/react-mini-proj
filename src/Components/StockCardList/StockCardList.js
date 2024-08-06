@@ -22,13 +22,10 @@ const StockCardList = ({ initialStocks, hasNavigate=true, hasDelete=true }) => {
         navigate(url)
     }
 
-    const deleteStock = async (stockId) => {
+    const deleteStock = (stockId) => {
         if (!hasDelete) return;
         
-        const success = await deleteStockAsync(stockId);
-        if (success) {
-            setStocks(stocks.filter(stock => stock.id !== stockId));
-        }
+        deleteStockAsync(stockId, stocks, setStocks);
     }
 
     return (

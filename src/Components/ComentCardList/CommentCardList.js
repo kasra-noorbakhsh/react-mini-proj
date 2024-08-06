@@ -10,10 +10,11 @@ const CommentCardList = ({ comments: initialComments }) => {
     useEffect(() => {
         setComments(initialComments);
     }, [initialComments]);
+
     return (
-        <div className="comment-card-list"> 
+        <div> 
         <p className="comment-list-header-message">دیدگاه ها:</p>
-            {comments.map(comment => <CommentCard key={comment.id} comment={comment} />)}
+            {comments?.map(comment => <CommentCard key={comment.id} comment={comment} />)}
         </div>
     )
 }

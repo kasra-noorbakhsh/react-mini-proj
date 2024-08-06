@@ -1,4 +1,4 @@
-.info-box {
+.comment-info-box {
     display: flex;
     align-items: flex-start;
     background-color: #f4f4f4;
@@ -14,7 +14,7 @@
     max-width: none;
 }
 
-.info-box-image {
+.comment-info-box-image {
     width: 100px;
     height: auto;
     object-fit: cover;
@@ -22,11 +22,11 @@
     margin-right: 16px;
 }
 
-.info-box-content {
+.comment-info-box-content {
     flex: 1;
 }
 
-.info-box-title {
+.comment-info-box-title {
     margin-right: 10px;
     font-weight: bold;
     font-size: 18px;
@@ -34,7 +34,7 @@
     color: #000;
 }
 
-.info-list {
+.comment-info-list {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
@@ -42,14 +42,10 @@
     margin: 0;
 }
 
-.info-list li {
+.comment-info-list-items {
     margin: 8px 30px 10px 80px;
     font-size: 17px;
     color: #333;
-}
-
-.info-list li strong {
-    color: #000;
 }
 
 .stock-page-add-comment-btn {

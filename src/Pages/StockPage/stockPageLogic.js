@@ -1,7 +1,6 @@
 import API from "../../api";
 import {toast} from "react-toastify";
 
-
 const fetchStockAsync = async (url) => {
     const response = await fetch(url, {
         method: 'get',
@@ -13,7 +12,7 @@ const fetchStockAsync = async (url) => {
 }
 
 export const setStockAsync = async (setStock, Id) => {
-    const url = `${API.getStocks}/with-comments/${Id}`
+    const url = API.getStockIncludeComments(Id)
     const data = await fetchStockAsync(url)
 
     const tempStocks = {
@@ -28,10 +27,10 @@ export const setStockAsync = async (setStock, Id) => {
     setStock(tempStocks);
 }
 
-export const CommentCreatorPopupAsync = async (data, stockId) => {
-    const url = `http://localhost:5206/api/comment/${stockId}`
+export const postCommentAsync = async (data, stockId, setStock) => {
+    const url = API.getCommentsByStockId(stockId)
     try {
-        const response = await fetch(url, {
+        await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -43,24 +42,16 @@ export const CommentCreatorPopupAsync = async (data, stockId) => {
             }),
         })
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
         toast.success('دیدگاه شما با موفقیت اضافه شد', {
             position: 'top-left',
             autoClose: 5000,
         });
-        return true
+        setStockAsync(setStock, stockId)
     }
-
     catch (error) {
         toast.error('خطا در اضافه کردن دیدگاه. لطفاً دوباره تلاش کنید', {
             position: 'top-left',
             autoClose: 5000,
         });
-        return false
-
     }
-
 }
