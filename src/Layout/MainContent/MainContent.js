@@ -10,7 +10,6 @@ import UserPage from "../../Pages/UserPage/UserPage"
 import StockPage from "../../Pages/StockPage/StockPage"
 
 const MainContent = () => {
-
 	return (
 		<Routes>
 			<Route path={Url.home} element={<HomePage />} />

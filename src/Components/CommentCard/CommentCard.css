@@ -19,29 +19,30 @@
     align-items: flex-start;
 }
 
-.edit-button{
-    align-self: flex-end; 
-    margin-top: 10px; 
+.edit-button {
+    align-self: flex-end;
+    margin-top: 10px;
 }
 
 .comment-text {
     width: 100%;
     height: auto;
-    word-wrap: break-word; 
-    white-space: pre-wrap; 
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 .comment-date {
-    margin-left: -10px; 
+    margin-left: -10px;
     color: grey;
 }
 
-.footer-date-edit{
+.footer-date-edit {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.footer-date-edit p{
+
+.footer-date-edit p {
     justify-self: end;
     align-self: flex-end;
 }
