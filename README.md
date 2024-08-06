@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Info
+This project was my first react mini project as i was challenged to create a tiny front-end for shahnam's back-end. I worked with [Shahnam](https://github.com/ShahnamFeyzian) and [Mohammad](https://github.com/MMDSour) for the case of this project.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
