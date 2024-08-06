@@ -11,7 +11,7 @@ const fetchUserAsync = async (url) => {
 }
 
 export const setUserAsync = async (setUser, id) => {
-    const url = API.getUserEncludePortfolio(id)
+    const url = API.getUserIncludePortfolio(id)
     const data = await fetchUserAsync(url)
 
     const tempUser = data.map((data) => {
