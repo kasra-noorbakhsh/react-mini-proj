@@ -71,3 +71,9 @@
     color: red;
     text-align: center;
 }
+
+@media only screen and (max-width: 502px) {
+    .stock-add-form {
+        width: 80%;
+    }
+}
