@@ -6,9 +6,17 @@
     height: 40px;
 }
 
+@media only screen and (max-width: 900px){
+    .stock-filter-form div{
+        margin: 15px;
+        padding: 5px;
+    }
+}
+
 .stock-filter-form-input {
     border-style: none;
     border-bottom-style: solid;
+    width: 135px;
 }
 
 .stock-filter-form-input:focus {
@@ -70,4 +78,11 @@
     cursor: not-allowed;
     color: #666666;
     box-shadow: none;
+}
+
+@media only screen and (max-width: 615px){
+    .stock-filter-form-submit{
+        margin-right: auto;
+        margin-left: auto;
+    }
 }
