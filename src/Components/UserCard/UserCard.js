@@ -5,7 +5,7 @@ const UserCard = ({ userData, onClickProcess }) => {
 		<div className="user-card" onClick={() => { onClickProcess(userData.id) }}>
 			<img className='user-card-img' src="../aks.jpg" alt='Avatar' />
 			<div>
-				<p>نام کاربری: {userData.name}</p>
+				<p data-testid="userName">نام کاربری: {userData.name}</p>
 			</div>
 		</div>
 	)
