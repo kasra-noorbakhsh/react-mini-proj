@@ -7,7 +7,6 @@ describe('StockAddForm', () => {
   });
 
   it('should render the form correctly', () => {
-    // Check if all input fields are rendered
     cy.get('input[placeholder="نماد..."]').should('exist');
     cy.get('input[placeholder="نام شرکت..."]').should('exist');
     cy.get('input[placeholder="قیمت خرید..."]').should('exist');
@@ -15,7 +14,6 @@ describe('StockAddForm', () => {
     cy.get('input[placeholder="صنعت..."]').should('exist');
     cy.get('input[placeholder="ارزش بنیادی..."]').should('exist');
 
-    // Check if the submit button is rendered
     cy.get('input[type="submit"]').should('exist').and('have.value', 'ثبت');
   });
 
@@ -56,7 +54,6 @@ describe('StockAddForm', () => {
       body: { success: true },
     }).as('addStock');
 
-    // Submit the form
     cy.get('input[type="submit"]').click();
 
     // Check if the success toast message appears
@@ -71,6 +68,5 @@ describe('StockAddForm', () => {
       industry: 'Technology',
       marketCap: 500,
     });
-    
   });
 });
