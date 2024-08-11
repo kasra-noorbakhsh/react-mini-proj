@@ -1,4 +1,4 @@
-import { mount } from 'cypress/react'; // Import mount from Cypress React
+import { mount } from 'cypress/react';
 import UserCard from '../../src/Components/UserCard/UserCard';
 
 const sampleUserData = {

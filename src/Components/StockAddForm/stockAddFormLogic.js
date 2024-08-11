@@ -14,7 +14,7 @@ export const schema = yup.object().shape({
 
 	industry: yup.string().required("فیلد حوزه صنعتی اجباری است"),
 
-	value: yup.number().typeError('قیمت باید عدد باشد').required("فیلد ارزش بنیادی اجباری است")
+	value: yup.number().typeError('ارزش بنیادی باید عدد باشد').required("فیلد ارزش بنیادی اجباری است")
 		.positive("ارزش بنیادی باید مثبت باشد")
 })
 
