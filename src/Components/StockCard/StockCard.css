@@ -4,15 +4,15 @@
     font-size: large;
     font-weight: bold;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s ease; /* Add 's' for seconds and ease transition */
+    transition: 0.3s ease; 
     border-radius: 7px;
     margin: 15px;
-    width: 20%; /* Set width to 20%, but adjust in media queries */
+    width: 20%; 
     align-items: center;
     background-color: wheat;
     padding: 10px 0px;
     color: mediumblue;
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    box-sizing: border-box; 
 }
 
 .stock-card:hover {
@@ -20,9 +20,9 @@
 }
 
 .stock-card-img {
-    width: 100%; /* Ensure image scales with the card */
-    max-width: 175px; /* Limit max width */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%; 
+    max-width: 175px; 
+    height: auto; 
     border-radius: 5px;
     mix-blend-mode: multiply;
 }
@@ -34,8 +34,8 @@
     margin: 4px;
     cursor: pointer;
     border-radius: 5px;
-    width: 90%; /* Ensure buttons scale with the card */
-    text-align: center; /* Center the text */
+    width: 90%; 
+    text-align: center; 
 }
 
 .delete-stock-btn {
@@ -56,19 +56,19 @@
     background-color: #291e86;
 }
 
-/* Responsive Design */
+
 @media only screen and (max-width: 768px) {
     .stock-card {
-        width: 45%; /* Adjust width for tablets */
+        width: 45%;
     }
 }
 
 @media only screen and (max-width: 480px) {
     .stock-card {
-        width: 90%; /* Full-width cards on mobile devices */
+        width: 80%; 
     }
 
     .stock-card-btn {
-        font-size: medium; /* Adjust button font size on smaller screens */
+        font-size: medium; 
     }
 }

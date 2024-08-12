@@ -16,7 +16,7 @@ const StockPage = () => {
 
 	useEffect(() => {
 		setStockAsync(setStock, stockId)
-	}, []);
+	}, [stockId]);
 
 	const openCommentPopup = () => {
 		setShowCommentPopup(true);

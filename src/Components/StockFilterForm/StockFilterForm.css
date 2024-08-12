@@ -1,42 +1,38 @@
-/* Stock filter form container */
 .stock-filter-form {
     width: 100%;
     max-width: 100%;
     margin-bottom: 20px;
     display: flex;
-    flex-wrap: nowrap; /* Keep items in a single line on larger screens */
-    justify-content: space-around; /* Evenly distribute space around elements */
+    flex-wrap: nowrap; 
+    justify-content: space-around; 
     align-items: center;
     padding: 10px;
     box-sizing: border-box;
-    z-index: 2; /* Ensure it stays above other content if needed */
+    z-index: 2; 
 }
 
-/* Form group container for label and input */
 .form-group {
     display: flex;
-    flex-direction: column; /* Stack label and input vertically */
-    margin: 0 10px; /* Margin on left and right for spacing */
+    flex-direction: column; 
+    margin: 0 10px; 
     padding: 5px;
-    flex-grow: 1; /* Allow inputs to grow if there's extra space */
+    flex-grow: 1; 
 }
 
-/* Labels */
 .form-group label {
-    margin-bottom: 5px; /* Space between label and input */
-    display: block; /* Ensure label is a block element */
+    margin-bottom: 5px; 
+    display: block; 
 }
 
-/* Stock filter input fields */
 .stock-filter-form-input {
     border-style: none;
     border-bottom: 2px solid #ccc;
-    width: 100%; /* Make inputs take up full width of their container */
-    max-width: 200px; /* Ensure input fields don’t grow too wide */
+    width: 100%; 
+    max-width: 200px; 
     padding: 5px;
     box-sizing: border-box;
     transition: border-color 0.3s ease;
-    margin-top: 5px; /* Space between the label and the input */
+    margin-top: 5px; 
 }
 
 .stock-filter-form-input:focus {
@@ -44,14 +40,12 @@
     border-color: aqua;
 }
 
-/* Error message styling */
 .stock-filter-form-error-message {
     color: red;
     font-size: small;
     margin-top: 5px;
 }
 
-/* Submit button styling */
 .stock-filter-form-submit {
     align-items: center;
     appearance: none;
@@ -80,10 +74,9 @@
     touch-action: manipulation;
     vertical-align: top;
     white-space: nowrap;
-    margin: 0 10px; /* Center align on smaller screens */
+    margin: 0 10px; 
 }
 
-/* Button focus and hover states */
 .stock-filter-form-submit:active,
 .stock-filter-form-submit:focus {
     outline: none;
@@ -105,26 +98,23 @@
     box-shadow: none;
 }
 
-/* Responsive adjustments */
 @media only screen and (max-width: 900px) {
     .stock-filter-form {
-        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        flex-wrap: wrap; 
 }
 
     .form-group {
-        margin: 10px 0; /* Adjust margin for wrapping */
-        width: 100%; /* Make inputs take full width on smaller screens */
-        max-width: 100%; /* Remove max width restriction */
+        margin: 10px 0; 
+        width: 100%; 
     }
 
     .stock-filter-form-input {
-        max-width: none; /* Remove max-width restriction for mobile */
+        max-width: none; 
     }
 
     .stock-filter-form-submit {
-        width: 100%; /* Make button take full width on smaller screens */
-        max-width: 100%;
-        margin: 10px 0; /* Adjust margin for wrapping */
+        width: 20%; 
+        margin: 10px 0; 
     }
 }
 
