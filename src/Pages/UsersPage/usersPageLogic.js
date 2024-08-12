@@ -1,14 +1,24 @@
+import { toast } from 'react-toastify';
+
 import API from "../../api"
 
 const fetchUsersAsync = async () => {
-	const response = await fetch(API.getUsers, {
-		method: "get",
-		headers: { "Content-Type": "application/json" }
-	})
+	try {
+		const response = await fetch(API.getUsers, {
+			method: "get",
+			headers: { "Content-Type": "application/json" }
+		})
 
-	const data = await response.json()
+		const data = await response.json()
+		return data
 
-	return data
+	}catch (error) {
+		toast.error('خطا در مشاهده کاربران. لطفاً دوباره تلاش کنید', {
+			position: 'top-left',
+			autoClose: 5000,
+		});
+		return []
+	}
 }
 
 export const setUsersAsync = async (setUsers) => {

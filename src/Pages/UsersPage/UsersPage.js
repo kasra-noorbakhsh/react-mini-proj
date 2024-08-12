@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react"
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import UserCardList from "../../Components/UserCardList/UserCardList"
 
@@ -13,6 +15,7 @@ const UsersPage = () => {
 
 	return (
 		<div>
+			<ToastContainer />
 			<UserCardList users={users} />
 		</div>
 	)
